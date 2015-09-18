@@ -25,12 +25,12 @@
     navigationController.navigationBar.hidden = YES;
     navigationController.toolbar.barStyle = UIBarStyleBlack;
 	WebViewController *webViewController = [[WebViewController alloc] init];
-	webViewController.urlString = @"https://developer.chrome.com/multidevice/ios/overview";
+	webViewController.urlString = @"http://localhost:3000";
 	
 	[navigationController pushViewController:webViewController animated:NO];
 	[webViewController release];
 	
-	[self.window addSubview:navigationController.view];
+    [self.window setRootViewController:navigationController];
 	
     [self.window makeKeyAndVisible];
     

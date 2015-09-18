@@ -18,13 +18,13 @@
 
 - (void)loadView
 {	
-	UIView *contentView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] applicationFrame]];	
+	UIView *contentView = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
 	contentView.autoresizesSubviews = YES;
 	self.view = contentView;	
 	[contentView release];
 	
     //set the web frame size
-    CGRect webFrame = [[UIScreen mainScreen] applicationFrame];
+    CGRect webFrame = [[UIScreen mainScreen] bounds];
     webFrame.origin.y = 0;
 	
     //add the web view
@@ -98,7 +98,7 @@
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations.
-    return (interfaceOrientation == UIInterfaceOrientationPortrait | UIInterfaceOrientationLandscapeLeft);
+    return interfaceOrientation == (UIInterfaceOrientationPortrait | UIInterfaceOrientationLandscapeLeft);
 }
 
 #pragma mark UIWebView delegate methods
